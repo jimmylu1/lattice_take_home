@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+//Button styling
 const Button = styled.a`
   display: inline-block;
   padding: 0.5rem 0;
@@ -10,8 +11,8 @@ const Button = styled.a`
   border: 3px solid black;
   text-align: center;
   &:hover {
-    cursor: pointer;
     background-color: white;
+    cursor: pointer;
   }
 `;
 

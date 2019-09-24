@@ -12,7 +12,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
 //Get top 20 trending movies for the week
-
 app.get("/popular", async (req, res) => {
   try {
     const response = await axios.get(

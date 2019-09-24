@@ -1,9 +1,38 @@
 import React, { Component } from "react";
-import axios from "axios";
 import MovieList from "./MovieList";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
+import axios from "axios";
 
-const Input = styled.input`
+//Global styling
+const GlobalStyle = createGlobalStyle`
+  table {
+    border-collapse: collapse; 
+    color: 'white';
+    padding-left: 16px;
+    background-color:#DEFDE0;
+  td {
+    border: 1px solid #def3fd;
+    border-collapse: collapse;
+  }
+  td,
+  tr {
+    padding: 5px;
+    font-size: 16px;
+  }
+  }
+`;
+
+//Header styling
+const Header = styled.h1`
+  font: 24px;
+  background: #defde0;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 0.5em;
+`;
+
+//Search form styling
+const SearchForm = styled.input`
   padding: 0.5em;
   margin-top: 0px;
   background: #def3fd;
@@ -12,6 +41,9 @@ const Input = styled.input`
   display: block;
   width: 98.5%;
   font-size: 12px;
+  &:hover {
+    cursor: text;
+  }
 `;
 
 export default class App extends Component {
@@ -58,14 +90,14 @@ export default class App extends Component {
     }
   };
 
-  //handle Search form
+  //Handle Search form
   handleSearchForm = () => {
     this.setState(
       {
         search: this.search.value
       },
       () => {
-        if (this.state.search && this.state.search.length > 1) {
+        if (this.state.search.length >= 0) {
           this.getInfo();
         }
       }
@@ -75,7 +107,9 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <Input
+        <GlobalStyle />
+        <Header>Discover New and Popular Movies</Header>
+        <SearchForm
           ref={input => (this.search = input)}
           onChange={this.handleSearchForm}
           placeholder="Search"

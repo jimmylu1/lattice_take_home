@@ -15,6 +15,6 @@ To run the web application, install it locally using npm:
 
 ```
 npm install -- install dependencies 
-npm start -- run application 
 npm run server -- start node server
+npm start -- run application 
 ```

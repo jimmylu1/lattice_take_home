@@ -1,15 +1,19 @@
 const express = require("express");
 const axios = require("axios");
 const bodyParser = require("body-parser");
-const { key } = require("./config.js");
+// const { key } = require("./config.js");
 
 const app = express();
 
 const port = process.env.PORT || 8080;
 
+//api key
+const key = "5d2d4df7fb5a433ce75f84e31b007695";
+
 app.listen(port, () => console.log(`Server running on port ${port}`));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 
 //Get top 20 trending movies for the week
 app.get("/popular", async (req, res) => {

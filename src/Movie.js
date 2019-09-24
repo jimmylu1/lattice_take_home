@@ -21,7 +21,6 @@ const Movie = props => {
     "http://image.tmdb.org/t/p/w185/" + props.movie.poster_path;
 
   let viewMore = () => {
-    console.log("viewMore");
     const url = "https://www.themoviedb.org/movie/" + props.movie.id;
     window.location.href = url;
   };

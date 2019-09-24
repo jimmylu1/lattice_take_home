@@ -14,7 +14,6 @@ const GlobalStyle = createGlobalStyle`
     border: 1px solid #def3fd;
     border-collapse: collapse;
   }
-  td,
   tr {
     padding: 5px;
     font-size: 16px;
@@ -50,13 +49,12 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movieList: [],
       search: "",
       result: []
     };
   }
 
-  //Render top 20 trending movies on first load
+  //Display top 20 trending movies on first load
   componentDidMount() {
     this.getInfo();
   }
@@ -69,7 +67,6 @@ export default class App extends Component {
         .then(res => {
           let { data } = res.data;
           const results = data.results;
-          console.log("results", results);
           this.setState({
             result: results
           });

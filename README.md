@@ -1,20 +1,20 @@
 # lattice_take_home
 
-##General Info
+## General Info
 Small web application that utilizes The Movie Database API to search for movies and displays trending movies for the week
 
-##Technologies
+## Technologies
 Created with:
 react version: 16.9
 axios version: 0.19
 express version: 4.17
 nodemon version 1.19
 
-##Set up
+## Set up
 To run the web application, install it locally using npm:
 
-``
+```
 npm install -- install dependencies 
 npm start -- run application 
 npm server -- start node server
-``
+```
